@@ -33,7 +33,7 @@ public class RegistrationTest {
         $("[data-test-id='date'] input"). setValue(planningDate);
         $("[data-test-id='name'] input").setValue("Петров Сергей");
         $("[data-test-id='phone'] input").setValue("+71231231231");
-        $(".checkbox__text").click();
+        $("[data-test-id='agreement']").click();
         $(".button__text").click();
         $(Selectors.withText("Встреча успешно забронирована")).should(Condition.visible,
                 Duration.ofSeconds(15));
