@@ -35,8 +35,9 @@ public class RegistrationTest {
         $("[data-test-id='phone'] input").setValue("+71231231231");
         $("[data-test-id='agreement']").click();
         $(".button__text").click();
-        $(Selectors.withText("Встреча успешно забронирована")).should(Condition.visible,
-                Duration.ofSeconds(15));
+        $("[data-test-id='notification']").should(Condition.visible,Duration.ofSeconds(15))
+                .should(Condition.text("Встреча успешно забронирована на " + planningDate));
+
 
     }
 
